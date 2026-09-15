@@ -530,3 +530,7 @@ button{ font-family:inherit; border:none; background:none; cursor:pointer; }
   pointer-events: auto !important;
   cursor: pointer;
 }
+#photo1-card,
+#photo2-card {
+  opacity: 1 !important;
+}
