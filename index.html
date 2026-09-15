@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>A little surprise for Kushagra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Caveat:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= AMBIENT BACKGROUND (persists across all scenes) ================= -->
+<canvas id="bg-canvas"></canvas>
+<div class="grain"></div>
+
+<!-- click burst container -->
+<div id="click-burst-layer"></div>
+
+<!-- subtle progress dots -->
+<nav class="progress" id="progress" aria-hidden="true">
+  <span class="dot active" data-step="0"></span>
+  <span class="dot" data-step="1"></span>
+  <span class="dot" data-step="2"></span>
+  <span class="dot" data-step="3"></span>
+  <span class="dot" data-step="4"></span>
+</nav>
+
+<!-- music toggle -->
+<button id="music-toggle" class="music-btn" aria-label="Toggle music">
+  <span class="note">♪</span><span class="music-label">Music</span>
+</button>
+<audio id="bg-audio" loop preload="none"></audio>
+
+<main id="stage" class="stage perspective-root">
+
+  <!-- ============ SCENE 0 — OPENING ============ -->
+  <section class="scene scene-opening active" data-scene="0">
+    <div class="opening-copy">
+      <p class="whisper">Someone has a little surprise for you&hellip;</p>
+    </div>
+
+    <div class="gift-wrap" id="gift-wrap">
+      <div class="gift" id="gift">
+        <div class="gift-glow"></div>
+        <div class="gift-lid">
+          <div class="ribbon-v"></div>
+          <div class="ribbon-h"></div>
+          <div class="bow">
+            <span class="bow-loop left"></span>
+            <span class="bow-loop right"></span>
+            <span class="bow-knot"></span>
+          </div>
+        </div>
+        <div class="gift-body">
+          <div class="ribbon-v body-ribbon"></div>
+        </div>
+        <div class="gift-inner-light"></div>
+      </div>
+    </div>
+
+    <button class="cta open-btn" id="open-btn">
+      <span>Open your surprise</span> <span class="emoji">🎁</span>
+    </button>
+  </section>
+
+  <!-- ============ SCENE 1 — PHOTO 1 POP OUT ============ -->
+  <section class="scene scene-photo1" data-scene="1">
+    <div class="card-envelope" id="card-envelope">
+      <div class="envelope-flap"></div>
+      <div class="envelope-body"></div>
+    </div>
+
+    <div class="polaroid photo1-polaroid" id="photo1-card">
+      <div class="polaroid-inner tilt-target">
+        <img id="photo1-img" src="images/kushagra.jpg" alt="Kushagra">
+      </div>
+      <p class="polaroid-caption">Surprise 02</p>
+    </div>
+
+    <div class="reveal-copy" id="photo1-copy">
+      <h1 class="headline" id="headline-name">Happy Birthday, Kushagra <span class="heart">❤️</span></h1>
+      <p class="subline">Today is all about celebrating you.</p>
+    </div>
+
+    <button class="cta more-btn" id="more-btn">
+      <span>There's more&hellip;</span> <span class="emoji">✨</span>
+    </button>
+  </section>
+
+  <!-- ============ SCENE 2 — PHOTO 2 POP OUT ============ -->
+  <section class="scene scene-photo2" data-scene="2">
+    <div class="bg-glow-pulse"></div>
+
+    <div class="polaroid photo1-polaroid receding" id="photo1-receded">
+      <div class="polaroid-inner">
+        <img src="images/kushagra.jpg" alt="Kushagra">
+      </div>
+    </div>
+
+    <div class="polaroid photo2-polaroid" id="photo2-card">
+      <div class="polaroid-inner tilt-target">
+        <img id="photo2-img" src="images/kushagra-couple.jpg" alt="Kushagra and his girlfriend">
+      </div>
+      <p class="polaroid-caption handwritten">Some memories just feel a little more special.</p>
+    </div>
+
+    <button class="cta read-btn" id="read-btn">
+      <span>Read this</span> <span class="emoji">❤️</span>
+    </button>
+  </section>
+
+  <!-- ============ SCENE 3 — THE LETTER ============ -->
+  <section class="scene scene-letter" data-scene="3">
+    <div class="polaroid photo2-polaroid receded-side" id="photo2-receded">
+      <div class="polaroid-inner">
+        <img src="images/kushagra-couple.jpg" alt="Kushagra and his girlfriend">
+      </div>
+    </div>
+
+    <div class="letter" id="letter">
+      <div class="letter-deco tl">✦</div>
+      <div class="letter-deco br">✦</div>
+      <div class="letter-scroll" id="letter-scroll">
+        <p class="letter-text" id="letter-text"></p>
+        <span class="caret" id="caret">|</span>
+      </div>
+      <div class="letter-glow" id="letter-glow"></div>
+    </div>
+
+    <button class="cta last-btn hidden" id="last-btn">
+      <span>There's still one last surprise&hellip;</span> <span class="emoji">✨</span>
+    </button>
+  </section>
+
+  <!-- ============ SCENE 4 — FINAL CELEBRATION ============ -->
+  <section class="scene scene-final" data-scene="4">
+    <div class="light-rays" id="light-rays"></div>
+
+    <div class="ghost-photo ghost-1">
+      <img src="images/kushagra.jpg" alt="">
+    </div>
+    <div class="ghost-photo ghost-2">
+      <img src="images/kushagra-couple.jpg" alt="">
+    </div>
+
+    <div class="final-copy">
+      <h1 class="final-headline">HAPPY BIRTHDAY,<br><span id="final-name">KUSHAGRA</span> <span class="heart">❤️</span></h1>
+      <p class="final-sub">Here's to us and many, many more beautiful memories.</p>
+      <p class="final-tiny">Made with love ❤️</p>
+    </div>
+
+    <div class="confetti-layer" id="confetti-layer"></div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
