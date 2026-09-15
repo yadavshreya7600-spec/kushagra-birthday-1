@@ -541,3 +541,11 @@ button{ font-family:inherit; border:none; background:none; cursor:pointer; }
   position: relative !important;
   z-index: 10 !important;
 }
+#photo1-img {
+  width: 250px !important;
+  height: 300px !important;
+  object-fit: cover !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
