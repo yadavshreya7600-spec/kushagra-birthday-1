@@ -534,3 +534,10 @@ button{ font-family:inherit; border:none; background:none; cursor:pointer; }
 #photo2-card {
   opacity: 1 !important;
 }
+#photo1-card img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
