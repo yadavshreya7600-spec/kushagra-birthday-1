@@ -526,3 +526,7 @@ button{ font-family:inherit; border:none; background:none; cursor:pointer; }
   .letter{ max-height:88vh; }
   .letter-scroll{ max-height:64vh; }
 }
+#open-btn {
+  pointer-events: auto !important;
+  cursor: pointer;
+}
