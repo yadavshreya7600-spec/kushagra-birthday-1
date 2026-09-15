@@ -5,8 +5,8 @@ const CONFIG = {
   name: "Kushagra",
 
   // photo paths — swap the files in /images or change these paths
-  PHOTO_1: "images/kushagra.jpg",          // solo photo of the birthday boy
-  PHOTO_2: "images/kushagra-couple.jpg",   // photo of him with his girlfriend
+  PHOTO_1: "kushagra.jpg",          // solo photo of the birthday boy
+  PHOTO_2: "kushagra-couple.jpg",   // photo of him with his girlfriend
 
   // the personal letter — shown EXACTLY as written, line breaks preserved
   letterMessage:
